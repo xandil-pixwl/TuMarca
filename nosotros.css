@@ -1,0 +1,580 @@
+/*Tipografías importadas para el uso en la página web desde Google Fonts*/
+@import url('https://fonts.cdnfonts.com/css/waildesh');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /*Evita que cualquier cosa se desborde a la derecha, principalmente colocado para evitar problemas con ciertas configuraciones*/
+}
+
+h1, h2, h3, h4 {
+    font-family: "Waildesh", sans-serif;
+    line-height: 42px;
+
+}
+
+/*Código base para nosotros.html*/
+/*codigo general para todas las secciones en pantalla completa*/
+.full-screen {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+
+/*Sección 1:Pantalla principal que abarca pantalla completa*/
+.section-imagen {
+  background-image: url(inicioNosotros.jpg); 
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /*Ocupa toda la pantalla*/
+  margin-left: 85px; /*Deja espacio para el sidebar*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;   
+  text-align: center;
+  padding: 25px;
+}
+
+/*Sección 2: Quienes somos?*/
+.quien-somos {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /*Recuadros de texto e imagen repartidos en 2/3 y 1/3 respectivamente*/
+  padding: 0;
+}
+
+/*Columna izquierda*/
+.columna-izquierda {
+  background-color: #f5f1eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  text-align: center;
+}
+
+.bloque-centrado h2 {
+  font-size: 40px;
+  font-family: "Waildesh", sans-serif;
+  color: #a4195b;
+  margin-bottom: 20px;
+}
+
+.bloque-centrado p {
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.columna-derecha {
+  display: flex;
+}
+
+.bloque-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Bloque de texto*/
+.bloque-texto {
+  background: url("quienes-somos.jpg") no-repeat center/cover;/*Forma de colocar imagen de fondo sin ajustar el texto encima*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/*Bloque de imagen*/
+.bloque-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Sección 3:Valores*/
+.valores {
+  background-color: #ffffff;
+  margin-left: 85px;
+  padding: 40px 20px;
+}
+
+.contenedor-valores {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.valor {
+  flex: 1;/*ayuda a facilitar colocar todos los caudros de valores en una misma fila*/
+  min-width: 350px;
+  max-width: 400px;
+  height: 380px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.valor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*Colores de fondo para cada valor*/
+.valor1 {
+  background-color: #f5dde8; /*Rosa claro*/
+}
+
+.valor2 {
+  background-color: #ffd392; /*Amarillo claro*/
+}
+
+.valor3 {
+  background-color: #f5dde8; /*Beige claro*/
+}
+
+.imagen-valor {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  align-self: flex-end; /*Posiciona a la derecha*/
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.contenido-valor {
+  margin-top: auto; /*Empuja el texto hacia abajo*/
+  color: #a4195b;
+}
+
+.contenido-valor h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.contenido-valor p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.texto-inicial {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.texto-inicial h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #a4195b;
+}
+
+.texto-inicial p {
+  font-size: 18px;
+  padding:20px;
+  color: #333333;
+}
+
+/*Efecto de animar al scrollear y profundidad con smbras en las imagenes y bloques, de tal forma la página no se ve simple siempre*/
+/*El estado inicial es oculto*/
+.animado {
+  opacity: 0;
+  transform: translateY(50px); /*Comienza desde abajo*/
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/*Se activa cuando entra en pantalla*/
+.animado.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*Sombra suave para imágenes y bloques*/
+.sombra {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/*Sección 4:actualidad*/
+.actualidad {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*Mitad imagen, mitad stepper*/
+  align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 60px 100px;
+  margin-left: 85px; /*Deja espacio por el sidebar*/
+  background-color: #fdf5f9; /*color suave de fondo*/
+}
+
+.actualidad h2 {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #a4195b;
+}
+
+.contenido.seccion.full-screen.actualidad {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* izq = imagen, der = stepper */
+  grid-template-rows: auto 1fr;   /* fila 1 = título, fila 2 = contenido */
+  min-height: 100vh;
+}
+
+/* Bloque imagen estilo paisaje */
+.bloque-imagen-actualidad {
+  grid-column: 1;
+  grid-row: 1 / 3; /* ocupa las dos filas */
+  height: 100%;
+}
+
+.bloque-imagen-actualidad img {
+  margin-top: 200px;
+  width: 500px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+/* Contenedor stepper */
+.stepper-container {
+  grid-column: 2;
+  grid-row: 2;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/*Stepper general*/
+.stepper {
+  /*width: 50%;*/
+  height: 100%;
+  position: relative;
+  min-width: 280px; /*asegura que no se deforme demasiado*/
+}
+
+.stepper-step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.stepper-step:last-child {
+  margin-bottom: 0;
+}
+
+/*Línea que conecta*/
+.stepper::before {/*indica que agregara un contenido antes del contenido real que ya está en el html*/
+  content: "";/*sirve para un elemento que no está en el html, como un pseudo-elemento, lo que ayuda a estilizar con mayor facilidad*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: #ccc;
+}
+
+/*Círculo*/
+.stepper-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #a4195b;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 16px;
+  z-index: 1;
+  transition: all 0.3s ease; /* animación */
+}
+
+/*efecto hover*/
+.stepper-circle:hover {
+  background: #a4195b;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(164, 25, 91, 0.6);
+  cursor: pointer;
+}
+
+/*Círculos que varian del resto por estilo (en este caso color)*/
+.stepper-step:nth-child(2) .stepper-circle {
+  border-color: #e4a62f;
+}
+
+.stepper-step:nth-child(4) .stepper-circle {
+  border-color: #e4a62f;
+}
+
+.stepper-step:nth-child(6) .stepper-circle {
+  border-color: #e4a62f;
+}
+
+.stepper-step:nth-child(2) .stepper-circle:hover {
+  background: #e4a62f;
+  box-shadow: 0 0 10px rgba(228, 166, 47, 0.6);
+}
+
+.stepper-step:nth-child(4) .stepper-circle:hover {
+  background: #e4a62f;
+  box-shadow: 0 0 10px rgba(228, 166, 47, 0.6);
+}
+
+.stepper-step:nth-child(6) .stepper-circle:hover {
+  background: #e4a62f;
+  box-shadow: 0 0 10px rgba(228, 166, 47, 0.6);
+}
+
+.stepper-content {
+  flex: 1;
+}
+
+.stepper-name {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 22px;
+}
+
+.stepper-desc {
+  font-size: 18px;
+  color: #666;
+}
+
+/*----------------RESPONSIVE: MÓVIL---------------------*/
+@media screen and (max-width: 600px) {
+  .section-imagen {
+    height: 30vh;
+    margin-left: 55px; /*espacio del sidebar*/
+    max-width: calc(100% - 55px);
+    padding: 10px;
+  }
+  
+  /*ajuste de margen para que el contenido no quede debajo del sidebar*/
+  .section-imagen,
+  .valores,
+  .actualidad,
+  .quien-somos {
+    margin-left: 55px; /*coincidiendo con el ancho del sidebar en móvil*/
+    padding: 20px;
+  }
+
+  /*Sección Quiénes somos*/
+  .quien-somos {
+    display: flex;
+    flex-direction: column; /*columnas apiladas verticalmente*/
+  }
+
+  .columna-izquierda, .columna-derecha {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .bloque-texto {
+    font-size: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .bloque-imagen img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  /*valores*/
+  .contenedor-valores {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .valor {
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+  }
+
+  .imagen-valor {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px auto;
+  }
+
+  .contenido-valor h3 {
+    font-size: 18px;
+  }
+
+  .contenido-valor p {
+    font-size: 14px;
+  }
+
+  /*Actualidad y la linea de procesos*/
+  .actualidad {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .bloque-imagen-actualidad img {
+    width: 100%;
+    height: auto;
+  }
+
+  .stepper-container {
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stepper-step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stepper-circle {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .stepper-name {
+    font-size: 18px;
+    margin-left: 26px;
+  }
+
+  .stepper-desc {
+    font-size: 14px;
+    margin-left: 26px;
+  }
+}
+
+/* -------------------- RESPONSIVE: TABLET -------------------- */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /*Sección imagen principal*/
+  .section-imagen {
+    margin-left: 65px; /*menos que pc, más que móvil*/
+    padding: 20px;
+  }
+
+  /*Sección quienes somos*/
+  .quien-somos {
+    grid-template-columns: 1fr 1.5fr; /*reduce el ancho de la columna izquierda*/
+  }
+
+  .columna-izquierda {
+    padding: 30px;
+  }
+
+  .columna-izquierda h2 {
+    font-size: 32px;
+  }
+
+  .columna-derecha {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bloque-texto {
+    padding: 25px;
+    font-size: 18px;
+  }
+
+  .bloque-imagen img {
+    height: auto;
+  }
+
+  /*Sección Valores*/
+  .valores {
+    margin-left: 65px;
+    padding: 30px 15px;
+  }
+
+  .contenedor-valores {
+    gap: 20px;
+  }
+
+  .valor {
+    min-width: 280px;
+    max-width: 350px;
+    height: auto;
+    padding: 15px;
+  }
+
+  .imagen-valor {
+    width: 140px;
+    height: 140px;
+  }
+
+  .contenido-valor h3 {
+    font-size: 20px;
+  }
+
+  .contenido-valor p {
+    font-size: 14px;
+  }
+
+  .texto-inicial h2 {
+    font-size: 28px;
+  }
+
+  .texto-inicial p {
+    font-size: 16px;
+  }
+
+  /*Sección Actualidad*/
+  .actualidad {
+    padding: 40px 30px;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .actualidad h2 {
+    font-size: 28px;
+  }
+
+  .stepper-container {
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .stepper-name {
+    font-size: 18px;
+  }
+
+  .stepper-desc {
+    font-size: 16px;
+  }
+}

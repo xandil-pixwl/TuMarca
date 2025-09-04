@@ -1,0 +1,269 @@
+/*Tipografías importadas para el uso en la página web desde Google Fonts*/
+@import url('https://fonts.cdnfonts.com/css/waildesh');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+  transition: all 0.3s ease-in-out; /*Transición suave por defecto*/
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /*Evita que cualquier cosa se desborde a la derecha, principalmente colocado para evitar problemas con ciertas configuraciones*/
+}
+
+h1, h2, h3, h4 {
+    font-family: "Waildesh", sans-serif;
+}
+
+/*Sección de contacto*/
+.seccion-contacto {
+  margin-left: 85px;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.contacto-header {
+  text-align: center;
+  background: #a4195b;
+  color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.contacto-header h2 {
+  font-size: 70px;
+  margin: 20px 0;
+}
+
+.contacto-cuerpo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 0 35px;
+}
+
+.formulario-container {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.formulario {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: #a4195b;
+  outline: none;
+}
+
+.formulario button {
+  background: #a4195b;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.formulario button:hover {
+  background: #d61b74;
+}
+
+.contacto-info {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  font-size: 18px;
+  height: 170px;
+}
+
+.contacto-info p {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.Resalte {
+  color: #a4195b;
+  font-weight: bold;
+  margin-right: 10px;
+  min-width: 180px;
+}
+
+.info-extra {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  background: #fff;
+  padding: 5px;
+  width: 600px;
+  height: 650px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-extra img {
+  max-width: 80%;
+  height: 90%;
+  border-radius: 8px;
+}
+
+/*--------------------RESPONSIVE: MÓVIL--------------------*/
+@media screen and (max-width: 600px) {
+  .seccion-contacto {
+    margin-left: 55px; 
+    padding: 20px 15px 50px;
+  }
+
+  .contacto-header h2 {
+    font-size: 36px;
+    padding: 15px;
+  }
+
+  .contacto-cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .formulario-container {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .formulario {
+    padding: 15px;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .formulario button {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .contacto-info {
+    padding: 15px;
+    font-size: 15px;
+    height: auto;
+  }
+
+  .contacto-info p {
+    max-width: 350px;
+    font-size: 12px;
+    display: block;
+  }
+
+  .Resalte {
+    min-width: 120px;
+    font-size: 14px;
+  }
+
+  .info-extra {
+    padding: 15px;
+    margin-top: 10px;
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  .info-extra img {
+    max-width: 50%; /*la imagen más grande para ocupar el ancho*/
+    height: auto;
+  }
+}
+/*--------------------RESPONSIVE: TABLET--------------------*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .seccion-contacto {
+    margin-left: 65px;
+    padding-bottom: 60px;
+  }
+
+  .contacto-header h2 {
+    font-size: 50px;
+    padding: 20px;
+  }
+
+  .contacto-cuerpo {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 0 25px;
+  }
+
+  .formulario-container {
+    gap: 30px;
+  }
+
+  .formulario {
+    padding: 20px;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .formulario button {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .contacto-info {
+    padding: 20px;
+    font-size: 16px;
+    height: auto;
+  }
+
+  .Resalte {
+    min-width: 140px;
+    font-size: 15px;
+  }
+
+  .info-extra {
+    padding: 20px;
+  }
+
+  .info-extra img {
+    max-width: 80%;
+  }
+}

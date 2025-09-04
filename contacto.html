@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--Código Página Web TuMarca / 2025-->
+<html lang="esp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes Proyecto Marca</title>
+    <!--Link para iconos del sidebar obtenidos de Google Font 'Iconos'-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="contacto.css">
+</head>
+<body class="fondo oculto">
+    <!--Pantalla de carga-->
+    <div id="pantalla-carga">
+        <img src="PantallaCarga.png" alt="Cargando...">
+    </div>
+
+   <!--Sidebar--> 
+
+    <aside class="sidebar sidebarInicio">
+        <div class="sidebar-header">
+            <img src="Isotipo-menu.png" alt="isotipo">
+            <h2>TuMarca</h2>
+        </div>
+        <ul class="sidebar-links">
+            <li>
+                <a href="index.html"><span class="material-symbols-outlined">home</span>Inicio</a>
+            </li>
+            <li>
+                <a href="productos.html"><span class="material-symbols-outlined">storefront</span>Productos</a>
+            </li>
+            <li>
+                <a href="nosotros.html"><span class="material-symbols-outlined">groups</span>Nosotros</a>
+            </li>
+            <li>
+                <a href="ayuda.html"><span class="material-symbols-outlined">help</span>FAQ</a>
+            </li>
+            <li>
+                <a href="contacto.html" class="active"><span class="material-symbols-outlined">forum</span>Contacto</a>
+            </li>
+        </ul>
+    </aside>
+    <div class="sidebar-overlay"></div>
+
+    <main class="seccion-contacto">
+    <div class="contacto-header">
+      <h2>Contáctanos</h2>
+    </div>
+
+    <div class="contacto-cuerpo">
+        <!-- Contenedor para formulario e información (en columna) -->
+        <div class="formulario-container">
+            <!-- Formulario -->
+            <div class="formulario">
+                <form action="https://formspree.io/f/xkgvpobo" method="POST">
+                    <label>Nombre:</label>
+                    <input type="text" name="Nombre" placeholder="Ingrese un nombre y un apellido" required>
+
+                    <label>Email:</label>
+                    <input type="email" name="Email" placeholder="Ingrese su correo electrónico" required>
+
+                    <label>Asunto:</label>
+                    <input type="text" name="Asunto">
+
+                    <label>Mensaje:</label>
+                    <textarea name="mensaje" rows="4" placeholder="¿Cómo podemos ayudarle?" required></textarea>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <!-- Información de contacto -->
+            <div class="contacto-info">
+                <p>Nos pondremos en contacto con usted pronto, de igual forma nos puede contactar por nuestro número de teléfono o directamente por nuestro correo electrónico:</p>
+                <p><span class="Resalte">Número de contacto:</span> +502 4128-83230</p>
+                <p><span class="Resalte">Correo electrónico:</span> tumarcapromocionalesgt@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Imagen (se mantiene a un lado) -->
+        <div class="info-extra">
+            <img src="contacto.jpeg" alt="Contáctanos">
+        </div>
+    </div>
+    </main>
+    <!--Conexión con los javascript-->
+    <script src="carga.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="animaciones.js"></script>
+</body>
+<!--Pie de Pagina-->
+    <footer class="pie-pagina general-pie">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#"><img src="LogoB.PNG" alt="logo"></a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>Sobre Nosotros</h2>
+                <p>Página Web: Angela Marina González Pérez</p>
+                <p>Diseño gráfico: Frida Sofia de la Cruz Zamora</p>
+                <h2>Contacto con la marca:</h2>
+                <p>+502 4128-83230</p>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2025 <strong>TuMarca</strong> - Quinto Bachillerato en Ciencias y Letras</small>
+        </div>
+    </footer>
+</html>

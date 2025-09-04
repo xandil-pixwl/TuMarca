@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--Código Página Web TuMarca / 2025-->
+<html lang="esp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes Proyecto Marca</title>
+    <!--Link para iconos del sidebar obtenidos de Google Font 'Iconos'-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="ayuda.css">
+</head>
+<body class="fondo oculto">
+    <!--Pantalla de carga-->
+    <div id="pantalla-carga">
+        <img src="PantallaCarga.png" alt="Cargando...">
+    </div>
+
+   <!--Sidebar--> 
+
+    <aside class="sidebar sidebarInicio">
+        <div class="sidebar-header">
+            <img src="Isotipo-menu.png" alt="isotipo">
+            <h2>TuMarca</h2>
+        </div>
+        <ul class="sidebar-links">
+            <li>
+                <a href="index.html"><span class="material-symbols-outlined">home</span>Inicio</a>
+            </li>
+            <li>
+                <a href="productos.html"><span class="material-symbols-outlined">storefront</span>Productos</a>
+            </li>
+            <li>
+                <a href="nosotros.html"><span class="material-symbols-outlined">groups</span>Nosotros</a>
+            </li>
+            <li>
+                <a href="ayuda.html" class="active"><span class="material-symbols-outlined">help</span>FAQ</a>
+            </li>
+            <li>
+                <a href="contacto.html"><span class="material-symbols-outlined">forum</span>Contacto</a>
+            </li>
+        </ul>
+    </aside>
+    <div class="sidebar-overlay"></div>
+
+    <!-- Contenido principal -->
+    <main class="ayuda-contenido"><!--Ayuda a darle forma a todo lo que se estructure dentro-->
+    <!-- Columna para la imagen -->
+    <div class="imagen-container">
+        <img src="preguntas.jpg" alt="Imagen decorativa">
+    </div>
+    <section class="faq-section"><!--Parte inical, titulo y subtitulo-->
+        <h1>¿En qué podemos ayudarte?</h1>
+        <p class="faq-sub">Encuentra respuestas rápidas a las preguntas más frecuentes.</p>
+
+        <!--Contenedor general, contiene tres preguntas con su respectiva respuesta-->
+        <div class="faq-contenedor">
+        <div class="faq-item">
+            <button class="faq-pregunta">¿Cómo puedo realizar un pedido?<span class="arrow">+</span></button>
+            <div class="faq-respuesta">
+            <p>Contáctanos mediante nuestro número telefónico <strong>(4128-8323)</strong> o nuestro correo electrónico <strong>(tumarcapromocionalesgt@gmail.com)</strong> para que te enviemos nuestro catálogo; entonces podremos hacer la cotización de tu pedido.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pregunta">¿Cuáles son los métodos de pago disponibles?<span class="arrow">+</span></button>
+            <div class="faq-respuesta">
+            <p>Contamos con <strong>transferencia</strong> a cuenta y cheques.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pregunta">¿Realizan envíos fuera de la capital?<span class="arrow">+</span></button>
+            <div class="faq-respuesta">
+            <p>Sí, <strong>realizamos envíos fuera de la capital</strong>, sin embargo, <strong>según el destino</strong>, requiere un monto adicional.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pregunta">¿Cuál es el tiempo aproximado de producción y entrega?<span class="arrow">+</span></button>
+            <div class="faq-respuesta">
+            <p>Aproximadamente ocupamos <strong>8 días hábiles</strong> de producción y entrega del producto; sin embargo este dato <strong>varía según el pedido</strong>.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pregunta">¿Ofrecen servicios de personalización y diseño?<span class="arrow">+</span></button>
+            <div class="faq-respuesta">
+            <p>Sí, contamos con <strong>servicios de personalización</strong> y diseño según tus necesidades. Contáctanos si deseas preguntar por tu caso particular.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pregunta">¿Tienen un monto mínimo para realizar un pedido?<span class="arrow">+</span></button>
+            <div class="faq-respuesta">
+            <p>No contamos con un monto mínimo para un pedido; los <strong>costos varían según la cantidad<strong> de unidades del pedido.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    </main>
+
+    <!--Conexión con los javascript-->
+    <script src="carga.js"></script><!--Script de la pantalla de carga-->
+    <script src="sidebar.js"></script><!--Script para la animación del sidebar-->
+    <script src="faq.js"></script><!--Conecta a un javascript que ayuda a desplegar la respuesta con un click, mantiene un orden y una estetica más util-->
+</body>
+<!--Pie de Pagina-->
+    <footer class="pie-pagina general-pie">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#"><img src="LogoB.PNG" alt="logo"></a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>Sobre Nosotros</h2>
+                <p>Página Web: Angela Marina González Pérez</p>
+                <p>Diseño gráfico: Frida Sofia de la Cruz Zamora</p>
+                <h2>Contacto con la marca:</h2>
+                <p>+502 4128-83230</p>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2025 <strong>TuMarca</strong> - Quinto Bachillerato en Ciencias y Letras</small>
+        </div>
+    </footer>
+</html>

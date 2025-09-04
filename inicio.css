@@ -1,0 +1,232 @@
+/*Tipografías importadas para el uso en la página web desde Google Fonts*/
+@import url('https://fonts.cdnfonts.com/css/waildesh');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+  transition: all 0.3s ease-in-out; /*transición suave por defecto*/
+}
+
+/*código css para index.html*/
+.section-imagen {
+    background-image: url(imagen-inicio-st.png); /*st=imagen sin texto*/
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /*Ocupa toda la pantalla*/
+    margin-left: 85px; /*Deja espacio para el sidebar*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;   
+    text-align: center;
+    padding: 25px;
+}
+
+/* Fondo de pantalla completo */
+.pantalla {
+  margin: 0;
+  padding: 0;
+  background-image: url('patrones-inicio.jpeg');/*Define que imagen será utilizada desde css*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: sans-serif;
+}
+
+.contenedor-principal { /*Describe como funciona la sección que contiene ambas tarejtas (nombres dados al recuadro de visión y misión respectivamente)*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 50px 20px;
+}
+
+/*Configura el aspecto y forma de las tarjetas en general, automaticamente ambas tienen la misma posición*/
+.tarjeta {
+  position: relative; /*Necesario para el recuadro de color*/
+  background-color: #fff; /*Son blancas por defecto*/
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /*Oculta el recuadro amarillo fuera del cuadro predeterminado*/
+}
+
+/*Funcion del recuadro y las especificaciones del mismo*/
+.tarjeta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fef3f5;
+  transform: scaleX(0); /*Inicialmente no se ve*/
+  transform-origin: center; /*Comienza desde el centro*/
+  transition: transform 0.4s ease-in-out;
+  z-index: 0; /*Detrás del contenido*/
+}
+
+/*Animación al pasar el mouse, se expande el relleno*/
+.tarjeta:hover::before {
+  transform: scaleX(1); /*Se llena completamente*/
+}
+
+/*Forma de asegurar que el contenido de la tarjeta esté encima del relleno*/
+.tarjeta > * {
+  position: relative;
+  z-index: 1;
+}
+
+/*Hover también mantiene la elevación*/
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*Cambia el orden de la segunda tarjeta con una clase extra a la segunda tarjeta, mantiene el aspecto definido anteriormente pero se le agrega de forma específica la posición en la que va el texto e imagen*/
+.tarjeta .invertida {
+  flex-direction: row-reverse;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.imagen {
+  width: 200px;
+  height: auto;
+  margin: 0 20px;
+  border-radius: 10px;
+}
+
+/*Funciona principalmente asegurandose de que el contenido siempre este por encima*/
+.contenido {
+  flex: 1;
+}
+
+/*Configuraciones generales del titulo y el texto (h2 y p)*/
+.contenido h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  font-family: "waildesh", sans-serif;
+  color: #a4195b;
+}
+
+.contenido p {
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/*-------------------RESPONSIVE: MÓVIL-------------------*/
+@media screen and (max-width: 600px) {
+  /* Ajusta la sección de imagen principal */
+  .section-imagen {
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .pantalla {
+    background-size: cover;
+    background-position: center;
+    margin-left: 0;
+  }
+
+  .contenedor-principal {
+    padding: 20px 10px;
+    gap: 25px;
+  }
+
+  .section-imagen,
+  .pantalla,
+  .contenedor-principal {
+    margin-left: 55px; /*espacio del sidebar*/
+    /*la funciona calc permite hacer calculos directamente, sirve para hacer relacion del contenido y lograr que algunos valores relativos respeten otros elementos que ya son fijos*/
+    max-width: calc(100% - 55px); /*evita que sobrepase la pantalla*/
+  }
+
+  .tarjeta {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    max-width: 90%;
+    width: 100%;
+    width: calc(100% - 55px); /*las tarjetas tampoco se salen*/
+  }
+
+  .tarjeta.invertida {
+    flex-direction: column; /* Apila imagen y contenido */
+  }
+
+  .imagen {
+    width: 130px;
+    margin: 10px 0;
+  }
+
+  .contenido h2 {
+    font-size: 1.5rem;
+  }
+
+  .contenido p {
+    font-size: 0.9rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/*--------------------RESPONSIVE: TABLET--------------------*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .section-imagen {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin-left: 60px; /* espacio para sidebar */
+  }
+
+  .pantalla {
+    background-size: cover;
+    margin-left: 60px;
+  }
+
+  .contenedor-principal {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .tarjeta {
+    padding: 25px;
+    gap: 15px;
+    max-width: 95%;
+    margin-left: 0;
+    flex-direction: row;
+  }
+
+  .tarjeta.invertida {
+    flex-direction: row-reverse;
+  }
+
+  .imagen {
+    width: 180px;
+  }
+
+  .contenido h2 {
+    font-size: 1.75rem;
+  }
+
+  .contenido p {
+    font-size: 1rem;
+  }
+}

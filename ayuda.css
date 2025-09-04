@@ -1,0 +1,234 @@
+/*Tipografías importadas para el uso en la página web desde Google Fonts*/
+@import url('https://fonts.cdnfonts.com/css/waildesh');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+  transition: all 0.3s ease-in-out; /*Transición suave por defecto*/
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /*Evita que cualquier cosa se desborde a la derecha, principalmente colocado para evitar problemas con ciertas configuraciones*/
+}
+
+h1, h2, h3, h4 {
+    font-family: "Waildesh", sans-serif;
+}
+
+.ayuda-contenido {
+  margin-left: 85px; /*espacio por el sidebar*/
+  padding: 50px 20px;
+  background: #f8f5f2;
+  min-height: 100vh;
+  display: flex;
+}
+
+.imagen-container {
+  flex: 0 0 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.imagen-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 5%;
+}
+
+.faq-section {
+  flex: 0 0 60%;
+  padding: 0 40px;
+}
+
+.faq-section h1 {
+  text-align: center;
+  font-family: "Waildesh", sans-serif;
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-top: 15%;/*Crea un espacio del % con la parte superior*/
+}
+
+.faq-sub {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.faq-contenedor {
+  max-width: 100%;
+  margin: auto;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.faq-pregunta {
+  width: 100%;
+  padding: 15px 20px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;/*Ayuda a animar suavemente el cambio de color de fondo*/
+}
+
+.faq-pregunta:hover {
+  background: #fdf1fa;
+}
+
+.faq-respuesta {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 20px;
+}
+
+.faq-respuesta p {
+  color: #555;
+  padding: 10px 0;
+  line-height: 1.5;
+}
+
+.faq-item.active .faq-respuesta {
+  max-height: 200px;
+  padding: 10px 20px;
+}
+
+.arrow {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .arrow {
+  transform: rotate(45deg);
+}
+
+/*--------------------RESPONSIVE: MÓVIL-------------------*/
+@media screen and (max-width: 600px) {
+  /*Contenido principal*/
+  .ayuda-contenido {
+    flex-direction: column;
+    margin-left: 55px;
+    padding: 20px;
+  }
+
+  /*Imagen*/
+  .imagen-container {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+    height: auto;
+  }
+
+  .imagen-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /*sección FAQ*/
+  .faq-section {
+    flex: 0 0 100%;
+    padding: 0;
+  }
+
+  .faq-section h1 {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .faq-sub {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .faq-item {
+    margin-bottom: 12px;
+  }
+
+  .faq-pregunta {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+
+  .faq-respuesta p {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .faq-item.active .faq-respuesta {
+    max-height: 150px; /*ajuste la altura para telefono*/
+    padding: 8px 15px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+}
+
+/*-------------------- RESPONSIVE: TABLET --------------------*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .ayuda-contenido {
+    flex-direction: row; /*mantiene imagen a la izquierda y FAQ a la derecha*/
+    margin-left: 65px;
+    padding: 30px;
+  }
+
+  .imagen-container {
+    flex: 0 0 45%;
+  }
+
+  .imagen-container img {
+    height: auto;
+  }
+
+  .faq-section {
+    flex: 0 0 55%;
+    padding: 0 20px;
+  }
+
+  .faq-section h1 {
+    font-size: 32px;
+    margin-top: 10%;
+  }
+
+  .faq-sub {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .faq-pregunta {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+
+  .faq-respuesta p {
+    font-size: 15px;
+    padding: 8px 0;
+  }
+
+  .faq-item.active .faq-respuesta {
+    max-height: 180px;
+    padding: 8px 15px;
+  }
+
+  .arrow {
+    font-size: 22px;
+  }
+}
